@@ -10,11 +10,11 @@ SQL - Structured query language is used to communicate with a database. Accordin
 ## Create Database :
 
     CREATE DATABASE databasename;
-### Create Database with collation:
+ #### Create Database with collation:
     CREATE DATABASE db_name 
     CHARACTER SET utf8
     COLLATE utf8mb4_general_ci;
-### Modify Database char & collation:
+ #### Modify Database char & collation:
     ALTER DATABASE db_name
     [DEFAULT] CHARACTER SET charset_name]
     [DEFAULT] COLLATE collation_name]
@@ -50,11 +50,11 @@ Example:
 The `ALTER TABLE` statement is used to add, delete, or modify columns in an existing table.
 And  also used to add and drop various constraints on an existing table.
 
-### Rename Table:
+ #### Rename Table:
     ALTER TABLE authors 
     RENAME author
 
-### Rename Column:
+ #### Rename Column:
     ALTER TABLE table_name 
     change existing_column new_column_name datatype;
 <!-- example -->
