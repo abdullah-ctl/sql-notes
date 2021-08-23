@@ -60,16 +60,70 @@ And  also used to add and drop various constraints on an existing table.
     ALTER TABLE author 
     change mail email varchar(20);
 
- ### Add Column:
+ #### Add Column:
     ALTER TABLE table_name 
     ADD column_name datatype;
 <!-- example -->
     ALTER TABLE users 
     ADD password varchar(100);
 
- ### Drop Column:
+ #### Drop Column:
     ALTER TABLE table_name
     DROP column_name;
 <!-- example -->
     ALTER TABLE users 
     DROP password;
+
+### Constraints:
+SQL constraints (বাদ্ধ্যবাধকতা) are used to specify rules for data in a table.
+
+Available constraints in SQL:
+ * NOT NULL - Ensures that a column cannot have a NULL value
+ * NULL - a column can have a NULL value
+ * UNIQUE  - Ensures that all values in a column are different
+ * DEFAULT 
+ * PRIMARY KEY
+ * FOREIGN KEY
+ * CHECK
+ * CREATE INDEX
+
+#### Default: 
+The `DEFAULT` constraint is used to set a default value for a column.
+
+    column_name datatype DEFAULT value;
+    
+#### Primary key: 
+The `PRIMARY KEY` constraint uniquely identifies each record in a table.
+Primary keys must contain UNIQUE values, and cannot contain NULL values.
+    
+    CREATE TABLE Users (
+        id int NOT NULL auto_increment,
+        age int,
+        PRIMARY KEY (id)
+    );
+#### Foregin  key: 
+A `FOREIGN KEY` is a field (or collection of fields) in one table, that refers to the `PRIMARY KEY` in another table. 
+
+    CREATE TABLE Users (
+        id int NOT NULL auto_increment,
+        age int,
+        role_id int,
+        PRIMARY KEY (id),
+        FOREGIN KEY (role_id) REFERENCES roles(role_id)
+    );
+
+Add Foregin key on existing column of a table :
+
+    ALTER TABLE Orders
+
+    ADD FOREIGN KEY (PersonID)
+    REFERENCES Persons(PersonID); 
+
+Drop Foregin key form a table :
+
+    ALTER TABLE Orders
+    DROP FOREIGN KEY PersonID;
+
+#### Check: 
+
+#### Create Index:
