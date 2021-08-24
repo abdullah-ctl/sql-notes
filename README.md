@@ -125,5 +125,38 @@ Drop Foregin key form a table :
     DROP FOREIGN KEY PersonID;
 
 #### Check: 
+The `CHECK` constraint is used to limit the value range that can be placed in a column.
 
+    CREATE TABLE Users (
+        ID int NOT NULL,
+        LastName varchar(255) NOT NULL,
+        FirstName varchar(255),
+        Age int,
+        CHECK (Age>=18)
+    );
+<!-- add-check -->
+    ALTER TABLE users
+    ADD CHECK (Age>=18);
+<!-- drop check -->
+    ALTER TABLE Persons
+    DROP CHECK CHK_PersonAge;
+    
 #### Create Index:
+The `CREATE INDEX` statement is used to create indexes in tables.
+`Indexes` are used to retrieve data from the database more quickly than otherwise. The users cannot see the indexes, they are just used to speed up searches/queries.
+
+    CREATE INDEX index_name
+    ON table_name (col1,col2,...);
+<!-- drop index -->
+    ALTER TABLE table_name
+    DROP INDEX index_name
+
+[more explaination on index...](https://www.youtube.com/watch?v=E--yzX05_k8)
+
+### Learning Resources:
+
+* W3Schools
+* Guru99
+* [DBMS By Gate Smashers --tutorial_hindi](https://www.youtube.com/playlist?list=PLxCzCOWd7aiFAN6I8CuViBuCdJgiOkT2Y)
+* geekforgeeks
+* [Sololearn](https://www.sololearn.com/learning/1060)
