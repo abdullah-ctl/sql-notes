@@ -140,7 +140,7 @@ The `CHECK` constraint is used to limit the value range that can be placed in a 
 <!-- drop check -->
     ALTER TABLE Persons
     DROP CHECK CHK_PersonAge;
-    
+
 #### Create Index:
 The `CREATE INDEX` statement is used to create indexes in tables.
 `Indexes` are used to retrieve data from the database more quickly than otherwise. The users cannot see the indexes, they are just used to speed up searches/queries.
@@ -153,6 +153,57 @@ The `CREATE INDEX` statement is used to create indexes in tables.
 
 [more explaination on index...](https://www.youtube.com/watch?v=E--yzX05_k8)
 
+
+### Select Statement :
+`SELECT` QUERY is used to fetch the data from database.
+
+It is the most frequently used SQL command and has the following general syntax:
+
+    SELECT 
+    [DISTINCT|ALL ]
+    { * | [fieldExpression [AS newName]}
+    FROM tableName
+    [alias] 
+    [WHERE condition]
+    [GROUP BY fieldName(s)]  
+    [HAVING condition] 
+    ORDER BY fieldName(s)
+
+Here, 
+
+`SELECT` is the SQL keyword that lets the database know that you want to retrieve data.
+
+`[DISTINCT | ALL]` are optional keywords that can be used to fine tune the results returned from the SQL `SELECT` statement. If nothing is specified then ALL is assumed as the default.
+
+`{*| [fieldExpression [AS newName]} at least one part must be specified, "*"` selected all the fields from the specified table name, fieldExpression performs some computations on the specified fields such as adding numbers or putting together two string fields into one.
+
+`FROM` tableName is mandatory and must contain at least one table, multiple tables must be separated using commas or joined using the `JOIN` keyword.
+
+`WHERE` condition is optional, it can be used to specify criteria in the result set returned from the query.
+
+`GROUP BY` is used to put together records that have the same field values.
+
+`HAVING` condition is used to specify criteria when working using the `GROUP BY` keyword.
+
+`ORDER BY` is used to specify the sort order of the result set.
+
+#### Select Examples:
+
+    SELECT * FROM users;
+
+    Select specific column data :
+    -------------------
+    SELECT name,email FROM users;
+
+
+    Using `AS` Keyword, you can set a customize name on any column when select a data :
+    -------------------
+    SELECT name AS user_name, email AS user_mail FROM users;
+
+    Concat multiple column data :
+    -------------------
+    SELECT CONCAT(column1,column2,..) AS new_column FROM table;
+    
 ### Learning Resources:
 
 * W3Schools
