@@ -344,6 +344,47 @@ Syntax :
 
     *ASC use for ascending order
 
+### LIMIT :
+
+The `limit` keyword is used to limit the number of rows returned in a query result.
+
+Syntax:
+    
+    SELECT * FROM tablename
+    ...
+    LIMIT numberOfRows;
+
+Example: 
+
+    SELECT * FROM movies
+    WHERE language = 'en'
+    ORDER BY country_id DESC
+    LIMIT 5;
+
+
+### OFFSET:
+If you want the query to return entries starting from a particular line, you can use `OFFSET` clause to tell it where it should start. And the practrial example will be pagination.
+
+Syntax :
+
+    SELECT * FROM tableName ...
+    LIMIT (n)
+    OFFSET (n)number
+
+    SELECT * FROM movie
+    WHERE category="action"
+    LIMIT 25
+    OFFEST 30;
+
+Limit with offset :
+
+    SELECT * FROM tableName ...
+    LIMIT numberOfOffest, numberOfLimit;
+
+    SELECT * FROM movie
+    WHERE language = "en"
+    LIMIT 30, 25;
+
 
 
 ### Learning Resources:
