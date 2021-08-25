@@ -254,6 +254,42 @@ sub-query:
 
 `*NB`: if you want to select items that don't exist on the array/list, then you have to use `NOT IN ` alter of `IN`
 
+### INSERT INTO:
+'INSERT INTO 'is used to store data in the tables.
+
+Basic Syntax:
+
+    INSERT INTO tableName (col1, col2, col3, ...) VALUES (data1, data2, data3, ...);
+
+Example :
+    
+    INSERT INTO members (full_names,gender,physical_address,contact_number) 
+    VALUES ('Sheldon Cooper','Male','Woodcrest', '0976736763');
+
+
+
+`NB:` Changing the order of the columns has no effect on the INSERT query in MySQL as long as the correct values have been mapped to the correct columns.
+
+#### Inserting into a Table from another Table:
+
+The INSERT command can also be used to insert data into a table from another table. The basic syntax is as shown below.
+
+    INSERT INTO table_1 SELECT * FROM table_2;   
+
+example:
+
+    INSERT INTO categories_archive 
+    SELECT * FROM categories;
+
+speacific :
+
+    INSERT INTO categories_archive(category_id,category_name,remarks) 
+    SELECT category_id,category_name,remarks FROM categories;
+
+
+  
+
+
 ### Learning Resources:
 
 * W3Schools
