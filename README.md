@@ -286,6 +286,31 @@ speacific :
     INSERT INTO categories_archive(category_id,category_name,remarks) 
     SELECT category_id,category_name,remarks FROM categories;
 
+### DELETE:
+Delete command is used to delete rows that are no longer required from the database tables
+
+Syntax :
+
+    DELETE FROM table_name [WHERE condition];
+
+Example :
+
+    DELETE FROM users WHERE user_id = 1;
+
+### UPDATE :
+The `UPDATE` command can be used to update a single field or multiple fields at the same time. It can also be used to update a MySQL table with values from another table.
+
+syntax:
+
+    UPDATE tablename 
+    SET col1 = val1, col2 = val2,...
+    WHERE condition;
+
+Example :
+
+    UPDATE books
+    SET name = 'Signature Mind', author_id = 1
+    WHERE id = 2;
 
   
 
