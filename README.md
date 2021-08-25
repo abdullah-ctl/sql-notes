@@ -161,7 +161,7 @@ The `CREATE INDEX` statement is used to create indexes in tables.
 [more explaination on index...](https://www.youtube.com/watch?v=E--yzX05_k8)
 
 
-### Select Statement :
+### Select :
 `SELECT` QUERY is used to fetch the data from database.
 
 It is the most frequently used SQL command and has the following general syntax:
@@ -312,7 +312,38 @@ Example :
     SET name = 'Signature Mind', author_id = 1
     WHERE id = 2;
 
-  
+### ORDER BY [ Data Sorting ]:
+`ORDER BY` clause is used to sort the data in ascending or descending order, based on one or more columns. Some databases sort the query results in an ascending order by default.
+
+Syntax :
+
+    SELECT statement... 
+    [WHERE condition | GROUP BY field_name(s) HAVING condition]
+    ORDER BY field_name(s) [ASC | DESC];
+* [Select](#select) is the regular select query
+" | " represents alternatives
+* [ [Where](#where-clause)" condition | [Group By](#group-by) `field_name(s)` [Having](#having) condition" is the optional condition used to filter the query result sets.
+* `ORDER BY` performs the query result set sorting
+* `[ASC | DESC]` is the keyword used to sort result sets in either ascending or descending order. Note `ASC` is used as the default.
+
+#### Order by column :
+
+    SELECT * FROM movies 
+    ORDER BY country_id;
+
+    SELECT * FROM movies 
+    ORDER BY country_id, release_year;
+
+#### Order by ascending & descending order:
+
+    SELECT * FROM movies
+    ORDER BY country_id DESC;
+
+    SELECT * FROM movies 
+    ORDER BY country_id ASC, release_year DESC;
+
+    *ASC use for ascending order
+
 
 
 ### Learning Resources:
