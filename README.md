@@ -328,18 +328,18 @@ Syntax :
 
 #### Order by column :
 
-    SELECT * FROM movies 
+    SELECT * FROM flim 
     ORDER BY country_id;
 
-    SELECT * FROM movies 
+    SELECT * FROM flim 
     ORDER BY country_id, release_year;
 
 #### Order by ascending & descending order:
 
-    SELECT * FROM movies
+    SELECT * FROM flim
     ORDER BY country_id DESC;
 
-    SELECT * FROM movies 
+    SELECT * FROM flim 
     ORDER BY country_id ASC, release_year DESC;
 
     *ASC use for ascending order
@@ -356,7 +356,7 @@ Syntax:
 
 Example: 
 
-    SELECT * FROM movies
+    SELECT * FROM flim
     WHERE language = 'en'
     ORDER BY country_id DESC
     LIMIT 5;
@@ -385,6 +385,39 @@ Limit with offset :
     WHERE language = "en"
     LIMIT 30, 25;
 
+### GROUP BY :
+The `GROUP BY` clause is a SQL command that ` is used to group rows ` that have the same values. The GROUP BY clause is used in the SELECT statement. Optionally it is used in conjunction with aggregate functions to` produce summary reports from the database`.
+
+That's what it does, `summarizing data from the database`.
+
+The queries that contain the `GROUP BY` clause are called grouped queries and only return a single row for every grouped item.
+
+    SELECT [*|col1,col2 ...]
+    FROM tableName
+    GROUP BY columnName [|,col_N];
+
+Example :
+
+    SELECT * FROM flim
+    WHERE language_id=1
+    GROUP BY release_year, rental_rate
+
+#### Grouping and aggregate functions:
+With helping a aggregate functions we can get / generate report by some data group.
+Suppose we want total number of males and females in our database. We can use the following script shown below to do that.
+
+    SELECT gender,COUNT(membership_number) FROM members GROUP BY gender;
+
+    SELECT avg(length) as AvgLength, release_year FROM film 
+    WHERE language_id=1 
+    GROUP BY release_year
+
+#### Restricting query results using the HAVING clause
+It's not always that we will want to perform groupings on all the data in a given table. There will be times when we will want to restrict our results to a certain given criteria. In such cases , we can use the HAVING clause
+
+Suppose we want to know all the release years for movie category id 8. 
+
+    SELECT * FROM film GROUP BY category_id,year_released HAVING category_id = 8;
 
 
 ### Learning Resources:
