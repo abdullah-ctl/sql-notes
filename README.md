@@ -426,23 +426,23 @@ Let's see some example:
 
 Select employe details name starting with A :
 
-    SELECT * FROM employe name LIKE 'A%';
+    SELECT * FROM employe WHERE name LIKE 'A%';
 
 SELECT employe details name ending with Z :
 
-    SELECT * FROM employe name LIKE '%Z';
+    SELECT * FROM employe WHERE name LIKE '%Z';
 
 SELECT employe name contains EE;
 
-    SELECT * FROM employe name LIKE '%EE%';
+    SELECT * FROM employe WHERE name LIKE '%EE%';
 
 Employe name contains 'a' in second place:
 
-    SELECT * FROM employe name LIKE '_a%'
+    SELECT * FROM employe WHERE name LIKE '_a%'
 
 Whose name contains 'a' in second place and name should be contain total five char.
 
-    SELECT * FROM employe name LIKE '_a___'
+    SELECT * FROM employe WHERE name LIKE '_a___'
 
 |Symble|Description|Example |
 |------|-----------|--------|
