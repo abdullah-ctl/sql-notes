@@ -452,6 +452,24 @@ _ |	{underscore} Represents a single character |	h_t finds hot, hat, and hit
 ^ |	Represents any character not in the brackets |	h[^oa]t finds hit, but not hot and hat
 \- | {dash}	Represents a range of characters |	c[a-b]t finds cat and cbt
 
+### REGEXP : 
+Regular Expressions help search data matching complex criteria. We looked at wildcards in the previous tutorial.  compared to wildcards, regular expressions allow us to search data matching even more complex criterion.
+
+Syntax : 
+
+    SELECT statements ... 
+    WHERE fieldName 
+    REGEXP 'your pattern goes here';
+
+Example : 
+    
+    SELECT * FROM movies WHERE title REGEXP '^[^abcd]';
+
+Know more about regex : 
+ * [Regex tutorial](https://www.youtube.com/watch?v=5ckmCW8png0)
+ * [How Regex in SQL Works](https://dataschool.com/how-to-teach-people-sql/how-regex-works-in-sql/)
+
+
 
 ### Learning Resources:
 
