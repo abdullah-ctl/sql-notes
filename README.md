@@ -419,6 +419,39 @@ Suppose we want to know all the release years for movie category id 8.
 
     SELECT * FROM film GROUP BY category_id,year_released HAVING category_id = 8;
 
+### Wildcards [like & not like]
+MySQL `Wildcards` are characters that help `search data matching complex criteria`. Wildcards are used in conjunction with the `LIKE` comparison operator or with the `NOT LIKE` comparison operator.
+Let's see some example:
+
+
+Select employe details name starting with A :
+
+    SELECT * FROM employe name LIKE 'A%';
+
+SELECT employe details name ending with Z :
+
+    SELECT * FROM employe name LIKE '%Z';
+
+SELECT employe name contains EE;
+
+    SELECT * FROM employe name LIKE '%EE%';
+
+Employe name contains 'a' in second place:
+
+    SELECT * FROM employe name LIKE '_a%'
+
+Whose name contains 'a' in second place and name should be contain total five char.
+
+    SELECT * FROM employe name LIKE '_a___'
+
+|Symble|Description|Example |
+|------|-----------|--------|
+% |	Represents zero or more characters |	bl% finds bl, black, blue, and blob
+_ |	{underscore} Represents a single character |	h_t finds hot, hat, and hit
+[] |	Represents any single character within the brackets |	h[oa]t finds hot and hat, but not hit
+^ |	Represents any character not in the brackets |	h[^oa]t finds hit, but not hot and hat
+\- | {dash}	Represents a range of characters |	c[a-b]t finds cat and cbt
+
 
 ### Learning Resources:
 
