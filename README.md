@@ -470,11 +470,60 @@ Know more about regex :
  * [How Regex in SQL Works](https://dataschool.com/how-to-teach-people-sql/how-regex-works-in-sql/)
 
 
+### SQL Functions :
+    Comming Soon
 
+###  Aggregate Functions :
+
+Aggregate Functions are all about
+
+* Performing calculations on multiple rows
+* Of a single column of a table
+* And returning a single value.
+The ISO standard defines five (5) aggregate functions namely;
+1) COUNT
+2) SUM
+3) AVG
+4) MIN
+5) MAX
+
+#### Why use aggregate functions?
+From a business perspective, different organization levels have different information requirements. Top levels managers are usually interested in knowing whole figures and not necessary the individual details.
+
+#### COUNT Function :
+The COUNT function returns the total number of values in the specified field. It works on both numeric and non-numeric data types.` All aggregate functions by default exclude nulls values before working on the data`.
+
+    SELECT COUNT(movie_id) FROM movierentals WHERE movie_id = 2;
+
+#### DISTINCT Keyword :
+
+The `DISTINCT` keyword that allows us to `omit duplicates from our results`. This is achieved by grouping similar values together .
+
+    SELECT DISTINCT movie_id FROM movierentals;
+
+#### MIN function :
+The `MIN` function returns the `smallest value in the specified table field`.
+
+    SELECT MIN(year_released) FROM movies;
+
+#### MAX function :
+Just as the name suggests, the `MAX` function is the opposite of the `MIN` function. It returns the `largest value from the specified table field`.
+
+    SELECT MAX(`year_released`)  FROM `movies`;
+#### SUM function :
+Suppose we want a report that gives total amount of payments made so far. We can use the `SUM` function which returns the sum of all the values in the specified column. SUM works on numeric fields only. Null values are excluded from the result returned.
+
+    SELECT SUM(`amount_paid`) FROM `payments`;
+
+#### AVG function :
+MySQL AVG function returns the average of the values in a specified column. Just like the SUM function, it works only on numeric data types.
+
+
+    SELECT AVG(`amount_paid`)  FROM `payments`;
 ### Learning Resources:
 
 * W3Schools
-* Guru99
+* [Guru99](#https://www.guru99.com/sql.html)
 * [DBMS By Gate Smashers --tutorial_hindi](https://www.youtube.com/playlist?list=PLxCzCOWd7aiFAN6I8CuViBuCdJgiOkT2Y)
 * geekforgeeks
 * [Sololearn](https://www.sololearn.com/learning/1060)
