@@ -520,6 +520,13 @@ MySQL AVG function returns the average of the values in a specified column. Just
 
 
     SELECT AVG(`amount_paid`)  FROM `payments`;
+
+### Sub-query :
+A sub-query is a `select query that is contained inside another query`. The innner select query is usually used to determine the result of the outer select query.
+
+    SELECT category_name 
+    FROM categories 
+    WHERE category_id =( SELECT MIN(category_id) from movies);
 ### Learning Resources:
 
 * W3Schools
