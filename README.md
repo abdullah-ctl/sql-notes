@@ -539,6 +539,33 @@ Given a choice, it is recommended to use a JOIN over a sub query.
 
 Sub-Queries should only be used as a fallback solution when you `cannot use a JOIN operation` to achieve the above
 
+### What are JOINS?
+Joins help retrieving data from two or more database tables. 
+The tables are mutually `related` using primary and foreign keys.
+
+### Types of Join
+
+The following are the types of JOIN that can be used in MySQL:
+- (INNER) JOIN - returns records that have matching values in both tables
+- LEFT JOIN (OUTER) - returns all records from the left table, and the matched records from the right table
+- RIGHT JOIN (OUTER) - returns all records from the right table, and the matched records from the left table
+
+to be more clear on the topic let's see the picture below:
+
+![SQL Concept](https://learnsql.com/blog/learn-and-practice-sql-joins/2.png)
+
+### JOIN: 
+
+Systax of join : 
+
+    SELECT column/s
+    FROM tableOne
+    [INNER/LEFT/RIGHT] JOIN tableTwo
+    ON tableOne.columnName = tableTwo.columnName;
+
+    ...statements;
+
+
 ### Learning Resources:
 
 * W3Schools
