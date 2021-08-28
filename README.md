@@ -527,6 +527,18 @@ A sub-query is a `select query that is contained inside another query`. The innn
     SELECT category_name 
     FROM categories 
     WHERE category_id =( SELECT MIN(category_id) from movies);
+
+### Sub-Queries Vs Joins : 
+When compare with Joins , sub-queries are simple to use and easy to read. They are not as complicated as Joins
+
+Hence there are frequently used by SQL beginners.
+
+But sub-queries have` performance issues`. Using a join instead of a sub-query can at times give you upto `500 times performance boost`.
+
+Given a choice, it is recommended to use a JOIN over a sub query.
+
+Sub-Queries should only be used as a fallback solution when you `cannot use a JOIN operation` to achieve the above
+
 ### Learning Resources:
 
 * W3Schools
